@@ -1,0 +1,17 @@
+{
+  "width": 640,
+  "height": 480,
+  "camera_fps": 30,
+  "processing_fps": 20,
+  "display_fps": 20,
+  "cv_threads": 2,
+  "fullscreen": true,
+  "confirmation_seconds": 5.0,
+  "fixation_grace": 0.4,
+  "repeat_release": 0.8,
+  "ui_max_pixels": 2073600,
+  "max_gap": 0.35,
+  "paged_navigation": true,
+  "navigation_seconds": 1.5,
+  "calibration_passes": 2
+}

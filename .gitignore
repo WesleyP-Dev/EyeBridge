@@ -1,0 +1,31 @@
+# Ambientes e caches
+.venv/
+.python/
+.uv-cache/
+.bootstrap/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+# Dados e arquivos locais
+.local/
+.codex/
+.codex-attachments/
+.agents/
+calibration*.json
+.env
+.env.*
+!.env.example
+# Saídas geradas
+historico/
+tmp/
+artifacts/
+output/
+*.zip
+*.log
+# Editor e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

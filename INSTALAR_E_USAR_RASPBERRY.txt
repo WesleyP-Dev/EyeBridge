@@ -1,0 +1,116 @@
+EYEBRIDGE 3.10 | INSTALAR E EXECUTAR NA RASPBERRY PI 5
+============================================================
+
+1. PREPARAR
+
+Use Raspberry Pi OS / Debian de 64 bits, com ambiente gráfico e webcam USB.
+Internet é necessária para instalar; depois o reconhecimento funciona localmente.
+Verifique a arquitetura com:
+uname -m
+
+Na Pi, espera-se aarch64. Copie o conteúdo da pasta EyeBridge de EyeBridge-atual.zip.
+Inclua a pasta models com face_landmarker.task. Não copie .venv do Windows.
+
+Entre na pasta que contém main.py e os scripts. Exemplo:
+cd ~/Desktop/EyeBridgev2
+
+2. PRIMEIRA INSTALAÇÃO
+
+Execute como usuário normal, não com o script inteiro em sudo:
+bash instalar_linux.sh
+
+O script usa sudo para apt, prepara o Python compatível e valida o modelo.
+O teste deve mostrar Face Landmarker + sinais oculares: OK.
+
+Se já estava instalado: atualize os fontes, preserve .venv e reabra. Esta versão
+não acrescenta dependências. Não é preciso reinstalar apenas para atualizar fontes.
+O perfil horizontal atual continua compatível. Basta fechar e reabrir o programa.
+Esta revisão melhora a filtragem e a contagem; a mira continua visível e contínua.
+
+3. EXECUTAR COM WEBCAM USB
+
+Dentro da pasta do programa:
+bash iniciar_linux.sh --backend opencv --camera 0 --config settings.pi5.json
+
+Não é necessário ativar .venv manualmente. Execute na sessão gráfica da Pi.
+Para iniciar em janela, acrescente --windowed. F alterna tela cheia.
+
+4. CALIBRAR E USAR
+
+Há quatro cartões por página, duas páginas no total. O controle é horizontal.
+A mira acompanha esquerda/direita na faixa dos cartões; o eixo vertical não é usado.
+
+G calibra seis posições horizontais, em duas passagens (12 apresentações, ~33 s).
+Olhe os pontos amarelos, com cabeça confortável e rosto iluminado. Não mova a
+cabeça de propósito. O perfil fica em calibration-normal.json. Refaça G após atualizar
+para a navegação por páginas; o perfil antigo não serve para esta versão.
+
+Olhe um cartão por 5 segundos para confirmar. Olhe PRÓX., na borda direita, por
+1,5 s para a segunda página; ANT., na esquerda, por 1,5 s para voltar. A barra dos
+botões laterais mostra a contagem. Navegar não confirma um pedido. Retorne aos
+cartões antes de outra troca. Para repetir o mesmo pedido, olhe para fora por 0,8 s.
+
+Página 1: Água, Comida, Banheiro, Conforto.
+Página 2: Ajuda, Sono, Dor, Conversar.
+
+Atalhos: G/C calibrar; H/CLEAR limpar histórico; V miniatura; F tela cheia;
+M espelhar miniatura; D demonstração; Q/Esc sair. No DEMO, mouse ou 1 a 4.
+
+5. SE NÃO ENCONTRAR A CÂMERA
+
+Feche outros aplicativos e outras instâncias do EyeBridge. Confira cabo/porta USB.
+Liste os dispositivos:
+v4l2-ctl --list-devices
+
+Se faltar o comando:
+sudo apt update
+sudo apt install v4l-utils usbutils
+
+Procure sua webcam pelo nome, por exemplo GENERAL WEBCAM.
+Não confunda os dispositivos de codec da Pi com a webcam.
+O índice 0 corresponde a /dev/video0. Se a captura for /dev/video2, execute:
+bash iniciar_linux.sh --backend opencv --camera 2 --config settings.pi5.json
+
+Alguns nós são metadados e não entregam imagem. Confira a capacidade de captura:
+v4l2-ctl -d /dev/video0 --all
+v4l2-ctl -d /dev/video0 --list-formats-ext
+
+Diagnóstico do programa, sem modificar os controles da webcam:
+bash iniciar_linux.sh --diagnose-camera --camera 0 --report artifacts/camera-diagnostic.json
+
+Se não aparecer nenhum dispositivo, confira:
+lsusb
+ls -l /dev/video*
+
+Reconecte e teste outra porta/cabo. Se houver Permission denied, confira:
+groups
+
+Se faltar acesso ao grupo video:
+sudo usermod -aG video "$USER"
+
+Saia da sessão e entre novamente ou reinicie. Não inicie o programa com sudo.
+
+6. MODELO, DESEMPENHO E DIAGNÓSTICO
+
+Teste sem abrir câmera:
+.venv/bin/python main.py --check --verbose
+
+Teste sem câmera, com olhar simulado:
+bash iniciar_linux.sh --demo --config settings.pi5.json
+
+No DEMO, mouse ou 1 a 4 mudam o foco; mantenha por 5 s. DEMO não testa precisão real.
+
+A câmera é solicitada em 640x480 a 30 FPS. A meta de análise é 20 FPS e o fluxo também
+suporta 10 FPS. A taxa real depende de câmera, iluminação e hardware; não é garantida.
+A janela usa 20 FPS no perfil Pi, com desenho nativo em Full HD dentro do limite de pixels.
+V oculta a miniatura, mantendo o reconhecimento ativo.
+
+Para salvar métricas ao sair:
+bash iniciar_linux.sh --backend opencv --camera 0 --config settings.pi5.json --report artifacts/pi-normal.json
+
+Se a calibração falhar, o arquivo calibration-normal-diagnostic.json contém as medidas
+e os alvos que ficaram parecidos. O diagnóstico não grava imagens. Refaça G com boa luz.
+
+Os PDFs estão em documentacao. Arquivos antigos desta máquina ficam em .local,
+fora da publicação no Git. Os arquivos .py e a pasta models são necessários.
+
