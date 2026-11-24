@@ -1,0 +1,15 @@
+flowchart TD
+    A[Webcam USB: quadro mais recente] --> B[Face Landmarker: marcos e medidas oculares]
+    B --> C{Leitura recente e olhar válido?}
+    C -- Não --> D[Pausar; cancelar se a falha persistir]
+    D --> A
+    C -- Sim --> E[Mediana, interpolação horizontal e One Euro]
+    E --> F{Destino com leituras concordantes?}
+    F -- Nenhum --> G[Pausar fixação]
+    G --> A
+    F -- Cartão --> H[Acumular 5 segundos de olhar válido]
+    H --> I[Confirmar e registrar no histórico]
+    F -- ANT. ou PRÓX. --> J[Acumular 1,5 segundo na lateral habilitada]
+    J --> K[Trocar página sem confirmar pedido]
+    I --> A
+    K --> A

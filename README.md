@@ -3,6 +3,11 @@
 Protótipo de comunicação por olhar, com webcam USB e processamento local.
 Compatível com Windows e Raspberry Pi 5 / Debian de 64 bits.
 
+
+![Ilustração conceitual do EyeBridge com webcam USB, Raspberry Pi e monitor](documentacao/imagens/ilustracao-projeto.png)
+
+*Ilustração conceitual gerada por IA; a tela desenhada não é uma captura do aplicativo.*
+
 ## A ideia do projeto
 
 O EyeBridge nasceu como um projeto acadêmico de tecnologia assistiva para explorar
@@ -68,6 +73,24 @@ O perfil pessoal fica em `calibration-normal.json` e é ignorado pelo Git.
 Na demonstração, use o mouse ou 1 a 4. As laterais trocam a página.
 Para repetir um pedido, olhe para fora do cartão por 0,8 segundo e volte.
 
+## Demonstração visual
+
+As imagens abaixo foram renderizadas pelo próprio código da interface com
+leituras de olhar simuladas. Mostram a interface real em modo demonstração;
+não são fotografias de uso por uma pessoa nem medições de desempenho na Raspberry.
+
+### Seleção por tempo de olhar
+
+![Página 1 com Comida selecionada e contagem em andamento](documentacao/imagens/interface-pagina-1.png)
+
+A mira acompanha a direção horizontal; a barra mostra o tempo válido de fixação.
+
+### Confirmação e histórico
+
+![Página 2 com Dor confirmada e registro no histórico](documentacao/imagens/interface-pagina-2.png)
+
+A segunda página apresenta os demais itens. Os registros mostrados são da simulação.
+
 ## Arquitetura
 
 O programa organiza o trabalho em três partes executadas separadamente:
@@ -88,6 +111,17 @@ Interface: mira, cartões e histórico
 A captura não acumula uma fila de imagens para analisar depois. Isso reduz o atraso
 entre o olhar atual e a resposta visual. A interface usa uma cópia do estado da
 sessão, evitando que o desenho bloqueie diretamente a análise da câmera.
+
+## Fluxograma do funcionamento
+
+![Fluxograma simplificado do processamento e confirmação do EyeBridge](documentacao/imagens/fluxograma.svg)
+
+O diagrama representa o modo de uso após a calibração individual. As contagens
+avançam apenas com leituras válidas que sustentam o destino; os dois ramos não
+representam confirmações imediatas. O ciclo continua enquanto o programa está aberto.
+
+Também disponível em [PNG](documentacao/imagens/fluxograma.png) e como
+[fonte Mermaid editável](documentacao/imagens/fluxograma.mmd).
 
 ## Como o olhar vira uma escolha
 

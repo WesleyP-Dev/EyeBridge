@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1680" viewBox="0 0 1600 1680">
+<rect width="1600" height="1680" fill="#f5f8fa"/>
+<text x="800" y="82.92" font-family="Arial, sans-serif" font-size="44" font-weight="700" text-anchor="middle" fill="#153039">EyeBridge | Fluxo do processamento</text>
+<text x="800" y="126.32" font-family="Arial, sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#526b73">Modo de uso após a calibração individual • fluxo simplificado</text>
+<rect x="430" y="180" width="740" height="110" rx="22" fill="#e5f3ef" stroke="#c9d9de" stroke-width="2"/>
+<text x="800.0" y="226.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Capturar o quadro mais recente</text>
+<text x="800.0" y="263.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Webcam USB → OpenCV; sem fila acumulada</text>
+<polyline points="800,290 800,340" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="800,340 793.4755169883315,326.49329346470984 806.5244830116685,326.49329346470984" fill="#007f79"/>
+<rect x="430" y="340" width="740" height="110" rx="22" fill="#e5f3ef" stroke="#c9d9de" stroke-width="2"/>
+<text x="800.0" y="386.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Executar o Face Landmarker</text>
+<text x="800.0" y="423.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Localizar os olhos e medir a posição das íris</text>
+<polyline points="800,450 800,500" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="800,500 793.4755169883315,486.49329346470984 806.5244830116685,486.49329346470984" fill="#007f79"/>
+<polygon points="800,500.0 1080.0,590 800,680.0 520.0,590" fill="#fff2d7" stroke="#c9d9de" stroke-width="2"/>
+<text x="800" y="580.18" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#153039">Leitura recente</text>
+<text x="800" y="615.18" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#153039">e olhar válido?</text>
+<polyline points="1080,590 1210,590" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1210,590 1196.49329346471,596.5244830116685 1196.49329346471,583.4755169883315" fill="#007f79"/>
+<text x="1143" y="573.46" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#007f79">Não</text>
+<rect x="1210" y="525" width="320" height="130" rx="22" fill="#fff2d7" stroke="#c9d9de" stroke-width="2"/>
+<text x="1370.0" y="571.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Pausar a contagem</text>
+<text x="1370.0" y="608.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Cancelar se a falha</text>
+<text x="1370.0" y="640.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">persistir</text>
+<polyline points="1530,590 1560,590 1560,235 1170,235" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1170,235 1183.50670653529,228.47551698833155 1183.50670653529,241.52448301166845" fill="#007f79"/>
+<polyline points="800,680 800,745" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="800,745 793.4755169883315,731.4932934647098 806.5244830116685,731.4932934647098" fill="#007f79"/>
+<text x="844" y="715.46" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#007f79">Sim</text>
+<rect x="430" y="745" width="740" height="125" rx="22" fill="#e5f3ef" stroke="#c9d9de" stroke-width="2"/>
+<text x="800.0" y="791.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Aplicar calibração e filtros</text>
+<text x="800.0" y="828.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Mediana → interpolação horizontal → One Euro</text>
+<polyline points="800,870 800,925" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="800,925 793.4755169883315,911.4932934647098 806.5244830116685,911.4932934647098" fill="#007f79"/>
+<polygon points="800,925.0 1110.0,1030 800,1135.0 490.0,1030" fill="#fff2d7" stroke="#c9d9de" stroke-width="2"/>
+<text x="800" y="1020.18" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#153039">Destino com leituras</text>
+<text x="800" y="1055.18" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#153039">concordantes?</text>
+<polyline points="490,1030 350,1030" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="350,1030 363.50670653529016,1023.4755169883315 363.50670653529016,1036.5244830116685" fill="#007f79"/>
+<text x="412" y="1012.46" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#007f79">Nenhum</text>
+<rect x="45" y="968" width="305" height="132" rx="22" fill="#fff2d7" stroke="#c9d9de" stroke-width="2"/>
+<text x="197.5" y="1014.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Pausar fixação</text>
+<text x="197.5" y="1051.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Aguardar novo olhar</text>
+<polyline points="45,1030 22,1030 22,235 430,235" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="430,235 416.49329346470984,241.52448301166845 416.49329346470984,228.47551698833155" fill="#007f79"/>
+<polyline points="660,1090 420,1170 420,1230" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="420,1230 413.47551698833155,1216.49329346471 426.52448301166845,1216.49329346471" fill="#007f79"/>
+<text x="295" y="1200.46" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#007f79">Cartão</text>
+<polyline points="940,1090 1180,1170 1180,1230" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1180,1230 1173.4755169883315,1216.49329346471 1186.5244830116685,1216.49329346471" fill="#007f79"/>
+<text x="1335" y="1200.46" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#007f79">ANT. / PRÓX.</text>
+<rect x="120" y="1230" width="600" height="130" rx="22" fill="#e5f3ef" stroke="#c9d9de" stroke-width="2"/>
+<text x="420.0" y="1276.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Acumular 5 s de olhar válido</text>
+<text x="420.0" y="1313.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Leitura atual, mediana e mira no cartão</text>
+<rect x="880" y="1230" width="600" height="130" rx="22" fill="#e5f3ef" stroke="#c9d9de" stroke-width="2"/>
+<text x="1180.0" y="1276.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Acumular 1,5 s na lateral</text>
+<text x="1180.0" y="1313.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Navegação habilitada na página atual</text>
+<polyline points="420,1360 420,1440" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="420,1440 413.47551698833155,1426.49329346471 426.52448301166845,1426.49329346471" fill="#007f79"/>
+<polyline points="1180,1360 1180,1440" fill="none" stroke="#007f79" stroke-width="4" stroke-linejoin="round"/>
+<polygon points="1180,1440 1173.4755169883315,1426.49329346471 1186.5244830116685,1426.49329346471" fill="#007f79"/>
+<rect x="120" y="1440" width="600" height="110" rx="22" fill="#cfeee1" stroke="#c9d9de" stroke-width="2"/>
+<text x="420.0" y="1486.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Confirmar o item</text>
+<text x="420.0" y="1523.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Registrar horário e pedido no histórico</text>
+<rect x="880" y="1440" width="600" height="110" rx="22" fill="#cfeee1" stroke="#c9d9de" stroke-width="2"/>
+<text x="1180.0" y="1486.97" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#153039">Trocar de página</text>
+<text x="1180.0" y="1523.39" font-family="Arial, sans-serif" font-size="23" font-weight="400" text-anchor="middle" fill="#526b73">Navegar não confirma pedidos</text>
+<text x="800" y="1603.46" font-family="Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#526b73">O ciclo continua enquanto o programa estiver aberto.</text>
+<text x="800" y="1634.46" font-family="Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#526b73">Piscadas pausam a contagem; perdas prolongadas de leitura cancelam a fixação.</text>
+</svg>
