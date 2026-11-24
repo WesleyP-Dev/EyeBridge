@@ -1,15 +1,18 @@
 flowchart TD
-    A[Webcam USB: quadro mais recente] --> B[Face Landmarker: marcos e medidas oculares]
-    B --> C{Leitura recente e olhar válido?}
-    C -- Não --> D[Pausar; cancelar se a falha persistir]
-    D --> A
-    C -- Sim --> E[Mediana, interpolação horizontal e One Euro]
+    A[Capturar o quadro mais recente] --> B[Face Landmarker: olhos e posição das íris]
+    B --> C{Rosto detectado e leitura recente?}
+    C -- Não --> Z[Zerar a contagem: sem rosto ou leitura com mais de 0,35 s]
+    Z --> A
+    C -- Sim --> D{Olhos abertos e olhar consistente?}
+    D -- Não --> P[Pausar a contagem; cancela após 0,4 s]
+    P --> A
+    D -- Sim --> E[Mediana, interpolação horizontal e One Euro]
     E --> F{Destino com leituras concordantes?}
-    F -- Nenhum --> G[Pausar fixação]
+    F -- Nenhum --> G[Pausar fixação; cancela após 0,4 s sem destino]
     G --> A
-    F -- Cartão --> H[Acumular 5 segundos de olhar válido]
+    F -- Cartão --> H[Acumular 5 s de olhar válido; cartão recém-confirmado só volta a contar após 0,8 s fora dele]
     H --> I[Confirmar e registrar no histórico]
-    F -- ANT. ou PRÓX. --> J[Acumular 1,5 segundo na lateral habilitada]
+    F -- ANT. ou PRÓX. --> J[Acumular 1,5 s na lateral habilitada]
     J --> K[Trocar página sem confirmar pedido]
     I --> A
     K --> A
