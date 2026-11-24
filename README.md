@@ -236,7 +236,7 @@ desenvolvimento desta máquina; não é necessária para executar o programa.
 Projeto desenvolvido por alunos como protótipo acadêmico de tecnologia assistiva.
 
 - Eduarda Rabelo
-- Tatiana Tive Redondo
+- Tatiana Tivo Redondo
 - Wesley Ruis Pietro
 - André Torres Marino
 - Giovana Beatriz Radaeli de Araujo
